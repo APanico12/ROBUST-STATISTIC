@@ -35,7 +35,7 @@ where:
 
 Since the variance of the sample mean is:
 
-$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{n}$,
+$\text{Var}(\bar{X}) = \frac{\sigma^2}{n}$,
 
 we obtain the final ARE formula:
 
@@ -46,8 +46,8 @@ $ARE(\bar{X}, \bar{X}_\alpha) = \frac{(1 - 2\alpha)^2}{1 - \frac{z_{1-\alpha} \v
 To validate our analytical result, we conduct a **Monte Carlo simulation** by generating multiple random samples from a normal distribution $N(2, 4)$ and computing both estimators $\bar{X}$ and $\bar{X}_\alpha$.
 
 We set:
-- $\mu = 2$, $\sigma = 4$,
-- $\alpha = 0.005$,
+- $\mu $= 2, $\sigma$ = 4,
+- $\alpha$ = 0.005,
 - A large number of simulations to approximate the empirical variance of $\bar{X}_\alpha$ and compare it with the theoretical formula.
 
 The simulation results confirm the accuracy of the derived ARE formula, demonstrating the efficiency loss of the trimmed mean relative to the standard sample mean.
