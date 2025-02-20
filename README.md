@@ -20,7 +20,7 @@ where $N(\mu, \sigma^2)$ denotes a normal distribution with mean $\mu$ and varia
 
 The efficiency of these estimators is measured through the **Asymptotic Relative Efficiency (ARE)**, defined as the ratio of their asymptotic variances:
 
-$\text{ARE}(\bar{X}, \bar{X}_\alpha)$ = $\frac{\text{Var}(\bar{X})}{\texty{Var}(\bar{X}_\alpha)}$
+$\text{ARE}$($\bar{X}$, $\bar{X}_\alpha$) = $\frac{\text{Var}(\bar{X})}{\texty{Var}(\bar{X}_\alpha)}$
 
 ## Analytical Result
 
