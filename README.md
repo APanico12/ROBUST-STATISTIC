@@ -24,9 +24,8 @@ $$ ARE(\bar{X}, \bar{X}_\alpha) = \frac{\operatorname{Var}(\bar{X})}{\operatorna
 
 Using standard results for truncated normal moments, the variance of the trimmed mean is given by:
 
-\[
-\text{Var}(\bar{X}_{\alpha}) = \frac{\sigma^2}{(1 - 2\alpha)^2 n} \left( 1 + 2\alpha - \frac{\phi(\Phi^{-1}(\alpha))^2}{\alpha(1-\alpha)} \right)
-\]
+$$ \operatorname{Var}(\bar{X}_\alpha) = \frac{\sigma^2}{(1 - 2\alpha)^2 n} \left( 1 - \frac{z_{1-\alpha} \varphi(z_{1-\alpha}) - z_\alpha \varphi(z_\alpha)}{\Phi(z_{1-\alpha}) - \Phi(z_\alpha)} \right) $$
+
 where:
 - \( \varphi(z) \) is the PDF of the standard normal distribution,
 - \( \Phi(z) \) is the CDF of the standard normal distribution,
@@ -34,7 +33,7 @@ where:
 
 Since the variance of the sample mean is:
 
-$$ \Var(\bar{X}) = \frac{\sigma^2}{n} $$
+$$ \operatorname{Var}(\bar{X}) = \frac{\sigma^2}{n} $$
 
 we obtain the final ARE formula:
 
@@ -54,3 +53,4 @@ The simulation results confirm the accuracy of the derived ARE formula, demonstr
 ## Conclusion
 
 This study derives and verifies the **Asymptotic Relative Efficiency (ARE)** of the sample mean and the trimmed mean. The theoretical variance matches the empirical variance obtained through simulations, validating the analytical expressions. This analysis is useful in statistical inference, especially when dealing with heavy-tailed distributions where trimming can provide robust estimators.
+"""
