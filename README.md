@@ -26,7 +26,7 @@ $\text{ARE}$($\bar{X}$, $\bar{X}_\alpha$) = $\frac{\text{Var}(\bar{X})}{\text{Va
 
 Using standard results for truncated normal moments, the variance of the trimmed mean is given by:
 
-$\operatorname{Var}(\bar{X}_\alpha) = \frac{\sigma^2}{(1 - 2\alpha)^2 n} \left(1 - \frac{z_{1-\alpha} \varphi(z_{1-\alpha}) - z_\alpha \varphi(z_\alpha)}{\Phi(z_{1-\alpha}) - \Phi(z_\alpha)} \right)$
+$\operatorname{Var}(\bar{X}_alpha) = \frac{\sigma^2}{(1 - 2\alpha)^2 n} \left(1 - \frac{z_{1-\alpha} \varphi(z_{1-\alpha}) - z_\alpha \varphi(z_\alpha)}{\Phi(z_{1-\alpha}) - \Phi(z_\alpha)} \right)$
 
 where:
 - $\varphi(z)$ is the PDF of the standard normal distribution,
