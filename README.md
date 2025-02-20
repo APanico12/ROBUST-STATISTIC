@@ -24,8 +24,9 @@ $$ ARE(\bar{X}, \bar{X}_\alpha) = \frac{\operatorname{Var}(\bar{X})}{\operatorna
 
 Using standard results for truncated normal moments, the variance of the trimmed mean is given by:
 
-$$ \Var(\bar{X}_\alpha) = \frac{\sigma^2}{(1 - 2\alpha)^2 n} \left( 1 - \frac{z_{1-\alpha} \varphi(z_{1-\alpha}) - z_\alpha \varphi(z_\alpha)}{\Phi(z_{1-\alpha}) - \Phi(z_\alpha)} \right) $$
-
+\[
+\text{Var}(\bar{X}_{\alpha}) = \frac{\sigma^2}{(1 - 2\alpha)^2 n} \left( 1 + 2\alpha - \frac{\phi(\Phi^{-1}(\alpha))^2}{\alpha(1-\alpha)} \right)
+\]
 where:
 - \( \varphi(z) \) is the PDF of the standard normal distribution,
 - \( \Phi(z) \) is the CDF of the standard normal distribution,
