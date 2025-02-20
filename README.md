@@ -14,7 +14,7 @@ where $N(\mu, \sigma^2)$ denotes a normal distribution with mean $\mu$ and varia
 
 2. **Trimmed Mean** $\bar{X}_\alpha$, with a symmetric trimming proportion $\alpha$, which removes the smallest and largest $\alpha n$ values:
 
-   $\bar{X}_\alpha$ = $\frac{1}{n - 2k}$ $\sum_{i=k+1}^{n-k}$ $X_{(i)}$
+   $\bar{X_\alpha}$ = $\frac{1}{n - 2k}$ $\sum_{i=k+1}^{n-k}$ $X_{(i)}$
 
    where $k = \lfloor \alpha n \rfloor$ and $X_{(i)}$ are the order statistics.
 
