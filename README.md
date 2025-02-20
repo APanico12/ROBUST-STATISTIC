@@ -1,57 +1,44 @@
-# Asymptotic Relative Efficiency (ARE) of the Sample Mean vs. Trimmed Mean
+# Asymptotic Relative Efficiency (ARE) of Sample Mean vs. Trimmed Mean
 
 ## Problem Description
 
-We consider a set of independent and identically distributed (iid) random variables:
+Given i.i.d. random variables:
 
 $$ X_1, X_2, ..., X_n \sim N(\mu, \sigma^2) $$
 
-where $ N(\mu, \sigma^2) $ denotes a normal distribution with mean $ \mu $ and variance $ \sigma^2 $. Our goal is to compare the efficiency of two estimators for $ \mu $:
+we compare two estimators for $\mu$:  
 
-1. **Sample Mean** $ \bar{X} $:
-   $$ \bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i $$
+1. **Sample Mean**:
+   $$ \bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i $$  
 
-2. **Trimmed Mean** $ \bar{X}_\alpha $ with a symmetric trimming proportion $ \alpha $, which removes the smallest and largest $ \alpha n $ values:
-   $$ \bar{X}_\alpha = \frac{1}{n - 2k} \sum_{i=k+1}^{n-k} X_{(i)} $$
+2. **Trimmed Mean** (removing smallest and largest $\alpha n$ values):
+   $$ \bar{X}_\alpha = \frac{1}{n - 2k} \sum_{i=k+1}^{n-k} X_{(i)} $$  
+   where $k = \lfloor \alpha n \rfloor$.
 
-   where $ k = \lfloor \alpha n \rfloor $ and $ X_{(i)} $ are the order statistics.
+## Asymptotic Relative Efficiency (ARE)
 
-The efficiency of these estimators is measured through the **Asymptotic Relative Efficiency (ARE)**, defined as the ratio of their asymptotic variances:
+Defined as:
 
 $$ ARE(\bar{X}, \bar{X}_\alpha) = \frac{\text{Var}(\bar{X})}{\text{Var}(\bar{X}_\alpha)} $$
 
-## Analytical Result
+The variance of $\bar{X}_\alpha$ is:
 
-Using standard results for truncated normal moments, the variance of the trimmed mean is given by:
-
-$$ \text{Var}(\bar{X}_\alpha) = \frac{\sigma^2}{(1 - 2\alpha)^2 n} \left( 1 - \frac{z_{1-\alpha} \varphi(z_{1-\alpha}) - z_\alpha \varphi(z_\alpha)}{\Phi(z_{1-\alpha}) - \Phi(z_\alpha)} \right) $$
+$$ \text{Var}(\bar{X}_\alpha) = \frac{\sigma^2}{(1 - 2\alpha)^2 n} \left(1 - \frac{z_{1-\alpha} \varphi(z_{1-\alpha}) - z_\alpha \varphi(z_\alpha)}{\Phi(z_{1-\alpha}) - \Phi(z_\alpha)} \right) $$  
 
 where:
+- $\varphi(z)$ = standard normal PDF  
+- $\Phi(z)$ = standard normal CDF  
+- $z_\alpha = \Phi^{-1}(\alpha)$, $z_{1-\alpha} = \Phi^{-1}(1 - \alpha)$  
 
-- $ \varphi(z) $ is the PDF of the standard normal distribution,
-- $ \Phi(z) $ is the CDF of the standard normal distribution,
-- $ z_\alpha = \Phi^{-1}(\alpha) $ and $ z_{1-\alpha} = \Phi^{-1}(1 - \alpha) $ are the quantiles of the normal distribution.
+Final ARE formula:
 
-Since the variance of the sample mean is:
-
-$$ \text{Var}(\bar{X}) = \frac{\sigma^2}{n} $$
-
-we obtain the final ARE formula:
-
-$$ ARE(\bar{X}, \bar{X}_\alpha) = \frac{(1 - 2\alpha)^2}{1 - \frac{z_{1-\alpha} \varphi(z_{1-\alpha}) - z_\alpha \varphi(z_\alpha)}{\Phi(z_{1-\alpha}) - \Phi(z_\alpha)}} $$
+$$ ARE(\bar{X}, \bar{X}_\alpha) = \frac{(1 - 2\alpha)^2}{1 - \frac{z_{1-\alpha} \varphi(z_{1-\alpha}) - z_\alpha \varphi(z_\alpha)}{\Phi(z_{1-\alpha}) - \Phi(z_\alpha)}} $$  
 
 ## Monte Carlo Simulation
 
-To validate our analytical result, we conduct a **Monte Carlo simulation** by generating multiple random samples from a normal distribution $ N(2, 4) $ and computing both estimators $ \bar{X} $ and $ \bar{X}_\alpha $.
-
-We set:
-
-$ \mu $ = 2 , $ \sigma$ = 4 ,
-$ \alpha $ = 0.005 ,
-A large number of simulations to approximate the empirical variance of $ \bar{X}_\alpha $ and compare it with the theoretical formula.
-
-The simulation results confirm the accuracy of the derived ARE formula, demonstrating the efficiency loss of the trimmed mean relative to the standard sample mean.
+We validate the ARE formula by simulating $X_i \sim N(2,4)$ and comparing empirical variances of $\bar{X}$ and $\bar{X}_\alpha$.
 
 ## Conclusion
 
-This study derives and verifies the **Asymptotic Relative Efficiency (ARE)** of the sample mean and the trimmed mean. The theoretical variance matches the empirical variance obtained through simulations, validating the analytical expressions. This analysis is useful in statistical inference, especially when dealing with heavy-tailed distributions where trimming can provide robust estimators.
+Theoretical and empirical results confirm the efficiency loss of the trimmed mean compared to the standard mean, useful for robust estimation.
+
