@@ -9,7 +9,7 @@ $$ X_1, X_2, ..., X_n \sim N(\mu, \sigma^2) $$
 we compare two estimators for $\mu$:  
 
 1. **Sample Mean**:
-   $$ \bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i $$  
+   $ \bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i $  
 
 2. **Trimmed Mean** (removing smallest and largest $\alpha n$ values):
    $$ \bar{X}_\alpha = \frac{1}{n - 2k} \sum_{i=k+1}^{n-k} X_{(i)} $$  
