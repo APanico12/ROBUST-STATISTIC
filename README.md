@@ -46,7 +46,7 @@ To validate our analytical result, we conduct a **Monte Carlo simulation** by ge
 
 We set:
 $\mu$
-- $ \mu $ = 2 , $ \sigma$ = 4 ,
+- $$ \mu $$ = 2 , $ \sigma$ = 4 ,
 - $ \alpha $ = 0.005 ,
 - A large number of simulations to approximate the empirical variance of $ \bar{X}_\alpha $ and compare it with the theoretical formula.
 
