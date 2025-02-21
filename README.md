@@ -20,7 +20,7 @@ where $N(\mu, \sigma^2)$ denotes a normal distribution with mean $\mu$ and varia
 
 The efficiency of these estimators is measured through the **Asymptotic Relative Efficiency (ARE)**, defined as the ratio of their asymptotic variances:
 
-$\text{ARE}$($\bar{X}$, $\bar{X_\alpha}$) = $\frac{\text{Var}(\bar{X})}{\text{Var}(\bar{X}_\alpha)}$
+$\text{ARE}$($\bar{X}$, $\bar{X_\alpha}$) = $\frac{\text{Var}(\bar{X_\alpha)})}{\text{Var}(\bar{X}}$
 
 ## Analytical Result
 
@@ -37,9 +37,9 @@ Since the variance of the sample mean is:
 
 $\text{Var}(\bar{X}) = \frac{\sigma^2}{n}$,
 
-we obtain the final ARE formula:
+we obtain the final ARE equation:
 
-$\text{ARE}(\bar{X}, \bar{X_\alpha}) = \frac{(1 - 2\alpha)^2}{1 - \frac{z_{1-\alpha} \varphi(z_{1-\alpha}) - z_\alpha \varphi(z_\alpha)}{\Phi(z_{1-\alpha}) - \Phi(z_\alpha)}}$
+$\text{ARE}(\bar{X}, \bar{X_\alpha}) = \frac{1}{(1 - 2\alpha)^2} \left[ 1 +\frac{2Z_{\alpha} \varphi(Z_{\alpha}) }{\Phi(Z_{1-\alpha}) - \Phi(Z_{\alpha})}\right]$
 
 ## Monte Carlo Simulation
 
